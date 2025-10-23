@@ -27,6 +27,7 @@
   --text-color-light: #5e626b;
   --link-color-primary: #b4bac4;
   --border-color-primary: #1a1f29;
+  --focus-color: #4c7fe4;
   --border-color-light: #cccccc;
   --brand-blue: #171c8f;
 }
@@ -853,6 +854,11 @@ fieldset legend {
   display: inline-flex;
   cursor: pointer;
   overflow: hidden;
+}
+
+.input-radio__input:focus-visible + .input-radio__visual {
+  outline: 2px var(--focus-color) solid;
+  outline-offset: 2px;
 }
 
 .input-radio-size {
