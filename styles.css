@@ -147,6 +147,11 @@ fieldset legend {
   width: 100%;
 }
 
+.btn:focus-visible {
+  outline: 2px solid var(--focus-color);
+  outline-offset: 2px;
+}
+
 .btn_primary {
   background-color: var(--brand-blue);
   color: #fff;
@@ -181,9 +186,19 @@ fieldset legend {
   padding: 10px;
 }
 
+.input:focus-visible {
+  outline: 2px solid var(--focus-color);
+  outline-offset: 2px;
+}
+
 .checkbox {
   width: 20px;
   height: 20px;
+}
+
+.checkbox:focus-visible {
+  outline: 2px solid var(--focus-color);
+  outline-offset: 2px;
 }
 
 .form {
@@ -213,6 +228,10 @@ fieldset legend {
   display: block;
   margin-top: -5px;
   max-width: 139px;
+}
+
+.header__logo:focus-visible {
+  outline: 2px solid var(--focus-color);
 }
 
 .header__logo-picture {
@@ -247,6 +266,11 @@ fieldset legend {
 
 .menu__link:hover {
   text-decoration: underline;
+}
+
+.menu__link:focus-visible {
+  outline: 2px solid var(--focus-color);
+  outline-offset: 2px;
 }
 
 @media (max-width: 900px) {
@@ -322,6 +346,11 @@ fieldset legend {
   text-decoration: underline;
 }
 
+.breadcrumbs__link:focus-visible {
+  outline: 2px solid var(--focus-color);
+  outline-offset: 2px;
+}
+
 .breadcrumbs__current {
   display: inline-block;
   font-size: 12px;
@@ -366,7 +395,7 @@ fieldset legend {
   .footer__columns {
     flex-wrap: wrap;
     margin-bottom: 0;
-  }  
+  }
   .footer__col:nth-child(1) {
     order: 3;
     width: 100%;
@@ -379,31 +408,31 @@ fieldset legend {
     width: 50%;
     max-width: 50%;
     padding-right: 20px;
-  }  
+  }
   .footer__col:last-child {
     order: 2;
     width: 50%;
     max-width: 50%;
     padding-left: 20px;
-  }    
+  }
 }
 
 @media (max-width: 460px) {
   .footer {
     padding-top: 40px;
-  }  
+  }
   .footer__col:nth-child(2) {
     width: 100%;
     max-width: 100%;
     padding-right: 0;
     text-align: center;
-  }  
+  }
   .footer__col:last-child {
     width: 100%;
     max-width: 100%;
     padding-left: 0;
     text-align: center;
-  }    
+  }
 }
 
 .footer__copyright {
@@ -435,6 +464,11 @@ fieldset legend {
   text-decoration: underline;
 }
 
+.footer__list-link:focus-visible {
+    outline: 2px solid var(--focus-color);
+    outline-offset: 2px;
+}
+
 .footer__heading {
   font-size: 13px;
   line-height: 1.4;
@@ -461,7 +495,7 @@ fieldset legend {
 @media (max-width: 768px) {
   .footer__address .social {
     justify-content: center;
-  }  
+  }
 }
 
 .social {
@@ -481,6 +515,11 @@ fieldset legend {
   align-items: center;
   width: 24px;
   height: 24px;
+}
+
+.social__link:focus-visible {
+  outline: 2px solid var(--focus-color);
+  outline-offset: 2px;
 }
 
 .social__logo {
@@ -542,6 +581,11 @@ fieldset legend {
 
 .accordion__item_active .accordion__item-title::before {
   display: none;
+}
+
+.accordion__item-title:focus-visible {
+  outline: 2px solid var(--focus-color);
+  outline-offset: 2px;
 }
 
 .accordion__item-body {
@@ -708,11 +752,21 @@ fieldset legend {
   height: 50px;
 }
 
+.product-size:focus {
+  outline: 2px solid var(--focus-color);
+  outline-offset: 2px;
+}
+
 .size-guide-link {
   display: block;
   margin-top: 10px;
   padding: 10px 0;
   text-decoration: underline;
+}
+
+.size-guide-link:focus-visible {
+  outline: 2px solid var(--focus-color);
+  outline-offset: 2px;
 }
 
 .modal {
@@ -748,6 +802,21 @@ fieldset legend {
 
 .show-modal {
   display: block;
+}
+
+.modal-close-icon {
+  position: absolute;
+  top: -20px;
+  right: 20px;
+  transition: opacity,top 0.2s;
+    opacity: 0;
+}
+
+.modal-close-icon:focus-visible {
+  top: 20px;
+  outline: 2px solid var(--focus-color);
+  outline-offset: 2px;
+  opacity: 1;
 }
 
 .size-guide__table tr:first-child td {
@@ -809,6 +878,8 @@ fieldset legend {
 
 .input-quantity__btn:focus-visible {
   z-index: 1;
+  outline: 2px solid var(--focus-color);
+  outline-offset: 2px;
 }
 
 .input-quantity__field {
@@ -820,7 +891,8 @@ fieldset legend {
 }
 
 .input-quantity__field:focus-visible {
-  border: none;
+  outline: 2px solid var(--focus-color);
+  outline-offset: 2px;
 }
 
 .input-quantity__field::-webkit-outer-spin-button,
@@ -994,6 +1066,11 @@ fieldset legend {
   position: relative;
 }
 
+.products-grid__item:focus-within{
+  outline: 2px solid var(--focus-color);
+  outline-offset: 2px;
+}
+
 .products-grid__item-photo {
   display: block;
   width: 100%;
@@ -1093,4 +1170,17 @@ fieldset legend {
   margin-left: 4px;
   margin-right: 4px;
   margin-bottom: 8px;
+}
+
+.skiplink {
+  position: absolute;
+  top: -100px;
+  left: 2px;
+  transition: top 0.2s;
+}
+
+.skiplink:focus {
+  top: 20px;
+  outline: 2px solid var(--focus-color);
+  outline-offset: 2px;
 }

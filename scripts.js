@@ -62,9 +62,21 @@ window.addEventListener("DOMContentLoaded", () => {
   const showModal = (modalWindow) => {
     modalWindow.classList.add('show-modal');
     modalWindow.focus();
+
+    const mainContent = document.querySelector('.main-grid');
+    mainContent.setAttribute('inert','true');
+
+    document.body.style.overflow = 'hidden';
   }
 
   const hideModal = (modalWindow) => {
     modalWindow.classList.remove('show-modal');
+
+    const mainContent = document.querySelector('.main-grid');
+    mainContent.removeAttribute('inert');
+
+    document.body.style.overflow = 'auto';
+
+    modalTarget[0].focus();
   }
 })
