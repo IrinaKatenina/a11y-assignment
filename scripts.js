@@ -87,18 +87,18 @@ window.addEventListener("DOMContentLoaded", () => {
 
   const showModal = (modalWindow) => {
     modalWindow.classList.add('show-modal');
-    modalWindow.focus();
 
-    modalWindow.addEventListener('keyup', (e) => {
+    const header = modalWindow.querySelector('.heading-2');
+    header.focus();
+
+    modalWindow.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' || e.key === 'Esc') {
         hideModal(modalWindow);
       }
-    });
+  });
 
     const mainContent = document.querySelector('.main-grid');
     mainContent.setAttribute('inert','true');
-
-    // document.body.style.overflow = 'hidden';
   }
 
   const hideModal = (modalWindow) => {
@@ -106,8 +106,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
     const mainContent = document.querySelector('.main-grid');
     mainContent.removeAttribute('inert');
-
-    // document.body.style.overflow = '';
 
     modalTarget[0].focus();
   }
