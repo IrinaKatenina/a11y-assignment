@@ -210,6 +210,7 @@ fieldset legend {
   display: flex;
   gap: 10px;
   align-items: center;
+  min-height: 48px;
 }
 
 .header {
@@ -804,19 +805,18 @@ fieldset legend {
   display: block;
 }
 
-.modal-close-icon {
+.modal-close {
   position: absolute;
-  top: -20px;
-  right: 20px;
+  top: 10px;
+  right: 10px;
+  width: 48px;
+  height: 48px;
   transition: opacity,top 0.2s;
-    opacity: 0;
 }
 
-.modal-close-icon:focus-visible {
-  top: 20px;
+.modal-close:focus-visible {
   outline: 2px solid var(--focus-color);
   outline-offset: 2px;
-  opacity: 1;
 }
 
 .size-guide__table tr:first-child td {
@@ -870,7 +870,12 @@ fieldset legend {
   line-height: 1;
 }
 
-.input-quantity__btn:hover {
+.input-quantity__btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.input-quantity__btn:hover:not(:disabled) {
   outline: 1px var(--border-color-primary) solid;
   z-index: 1;
   color: var(--text-color-primary);

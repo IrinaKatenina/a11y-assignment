@@ -12,14 +12,46 @@ window.addEventListener("DOMContentLoaded", () => {
     const inputField = input.querySelector('.input-quantity__field');
     const inputBtnIncrease = input.querySelector('.input-quantity__btn[data-action=increase]');
     const inputBtnDecrease = input.querySelector('.input-quantity__btn[data-action=decrease]');
+
+    const changeValue = (newValue) => {
+      if (newValue >= 1) {
+        inputField.value = newValue;
+        inputField.setAttribute("aria-valuenow", `${newValue}`);
+      }
+
+      if (newValue > 1) {
+        inputBtnDecrease.removeAttribute("disabled");
+      } else {
+        inputBtnDecrease.setAttribute("disabled", 'true');
+      }
+
+      if (newValue < 1) {
+        inputField.setAttribute("aria-invalid", 'true' );
+      } else {
+        inputField.removeAttribute("aria-invalid");
+      }
+    }
+
     inputBtnIncrease.addEventListener('click', () => {
       const initialValue = inputField.value * 1;
-      inputField.value = initialValue + 1;
+      changeValue(initialValue + 1);
     });
     inputBtnDecrease.addEventListener('click', () => {
       const initialValue = inputField.value * 1;
-      if (initialValue > 1) inputField.value = initialValue - 1;
+      changeValue(initialValue - 1);
     });
+
+    inputField.addEventListener('input', () => changeValue(inputField.value));
+
+    const handleKey= (e)=> {
+      let v = +inputField.value || 0;
+      if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {
+        e.preventDefault();
+        changeValue(v + (e.key === 'ArrowUp' ? 1 : -1));
+      }
+    }
+
+    inputField.addEventListener('keydown', (e) => handleKey(e));
   });
 
   const accordions = document.querySelectorAll('.accordion__item');
@@ -37,18 +69,12 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   const modalTarget = document.querySelectorAll('.modal-target');
-    modalTarget.forEach((modalTarget) => {
-        modalTarget.addEventListener('click', () => {
-            const modalWindow = document.querySelector('.modal');
-            showModal(modalWindow);
-
-            modalWindow.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' || e.key === 'Esc') {
-                    hideModal(modalWindow);
-                }
-            });
-        });
-    });
+  modalTarget.forEach((_modalTarget) => {
+      _modalTarget.addEventListener('click', () => {
+          const modalWindow = document.querySelector('.modal');
+          showModal(modalWindow);
+      });
+  });
 
   const modalBackdrop = document.querySelectorAll('.modal-backdrop');
   modalBackdrop.forEach((modalBackdrop)=> {
@@ -63,10 +89,16 @@ window.addEventListener("DOMContentLoaded", () => {
     modalWindow.classList.add('show-modal');
     modalWindow.focus();
 
+    modalWindow.addEventListener('keyup', (e) => {
+      if (e.key === 'Escape' || e.key === 'Esc') {
+        hideModal(modalWindow);
+      }
+    });
+
     const mainContent = document.querySelector('.main-grid');
     mainContent.setAttribute('inert','true');
 
-    document.body.style.overflow = 'hidden';
+    // document.body.style.overflow = 'hidden';
   }
 
   const hideModal = (modalWindow) => {
@@ -75,7 +107,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const mainContent = document.querySelector('.main-grid');
     mainContent.removeAttribute('inert');
 
-    document.body.style.overflow = 'auto';
+    // document.body.style.overflow = '';
 
     modalTarget[0].focus();
   }
