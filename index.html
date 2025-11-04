@@ -12,7 +12,7 @@
     <header class="header">
         <a class="skiplink" href="#main">Skip to main</a>
         <div class="container header__container">
-            <div class="header__menu-main">
+            <nav class="header__menu-main">
                 <ul class="menu">
                     <li class="menu__item">
                         <a class="menu__link" href="#">Women</a>
@@ -41,14 +41,14 @@
                         <a class="menu__link" href="#">Cart (0)</a>
                     </li>
                 </ul>
-            </div>
+            </nav>
         </div>
     </header>
 
     <main id="main" class="page-content">
         <div class="container">
-            <div>
-                <ul class="breadcrumbs">
+            <nav aria-label="Breadcrumbs">
+                <ol class="breadcrumbs">
                     <li class="breadcrumbs__item">
                         <a class="breadcrumbs__link" href="#">Home</a>
                     </li>
@@ -56,16 +56,63 @@
                         <a class="breadcrumbs__link" href="#">Women</a>
                     </li>
                     <li class="breadcrumbs__item breadcrumbs__item_active">
-                        <span class="breadcrumbs__current">White unisex t-shirt</span>
+                        <a href aria-current=page class="breadcrumbs__link breadcrumbs__current">White unisex t-shirt</a>
                     </li>
-                </ul>
-            </div>
+                </ol>
+            </nav>
 
-            <div class="product-card" id="skipLinkTarget">
-                <section class="product-card__right">
+            <div class="product-card">
+                <a class="skiplink" href="#productInformation">Skip to product information</a>
+                <section class="product-card__left">
+                    <a class="product-card__photo-big" href="#" tabindex="-1" aria-hidden="true">
+                        <img class="product-card__photo-big-picture" src="images/photo1.jpg"
+                             srcset="images/photo1_x2.jpg 2x" alt="">
+                    </a>
+                    <h1 id="accordionHeader" class="visually-hidden">Product info</h1>
+                    <div class="accordion" aria-labelledby="accordionHeader">
+                        <div class="accordion__item">
+                            <h2 id="productInfo1">
+                                <button type="button" aria-controls="productInfo1Body" class="accordion__item-title" aria-expanded="false">
+                                    Sizing & Fit
+                                </button>
+                            </h2>
+                            <div class="accordion__item-body" id="productInfo1Body">Olga is 175cm, she is wearing a size
+                                S.
+                            </div>
+                        </div>
+                        <div class="accordion__item">
+                            <h2 id="productInfo2">
+                                <button type="button" aria-controls="productInfo2Body" class="accordion__item-title" aria-expanded="false">
+                                    Composition & Care
+                                </button>
+                            </h2>
+                            <div class="accordion__item-body" id="productInfo2Body">Lorem ipsum dolor sit amet,
+                                consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                                aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                                aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                                velit esse cillum dolore eu fugiat nulla pariatur.
+                            </div>
+                        </div>
+                        <div class="accordion__item">
+                            <h2>
+                                <button type="button" aria-controls="productInfo3Body" class="accordion__item-title" aria-expanded="false">
+                                    Delivery & Returns
+                                </button>
+                            </h2>
+                            <div class="accordion__item-body" id="productInfo3Body" aria-labelledby="productInfo3">Duis
+                                aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                                pariatur
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="productInformation" class="product-card__right">
                     <h1 class="product-card__title" id="productName">White unisex t-shirt</h1>
-                    <p class="product-card__price">EUR 40</p>
-                    <p class="product-card__infolabel">Tax included</p>
+                    <div class="price-container">
+                        <span class="visually-hidden">Regular price</span>
+                        <p class="product-card__price">EUR 40</p>
+                        <p class="product-card__infolabel">Tax included</p>
+                    </div>
                     <div class="product-card__form">
                         <div class="product-card__parameter">
                             <label for="select-size" class="product-card__label">Size</label>
@@ -165,48 +212,6 @@
                         <p>Certification of cotton - GOTS</p>
                     </div>
                 </section>
-                <div class="product-card__left">
-                    <a class="product-card__photo-big" href="#" tabindex="-1" aria-hidden="true">
-                        <img class="product-card__photo-big-picture" src="images/photo1.jpg"
-                             srcset="images/photo1_x2.jpg 2x" alt="">
-                    </a>
-                    <div class="accordion" aria-label="Product info">
-                        <div class="accordion__item">
-                            <h2 id="productInfo1">
-                                <button type="button" aria-controls="productInfo1Body" class="accordion__item-title">
-                                    Sizing & Fit
-                                </button>
-                            </h2>
-                            <div class="accordion__item-body" id="productInfo1Body">Olga is 175cm, she is wearing a size
-                                S.
-                            </div>
-                        </div>
-                        <div class="accordion__item">
-                            <h2 id="productInfo2">
-                                <button type="button" aria-controls="productInfo2Body" class="accordion__item-title">
-                                    Composition & Care
-                                </button>
-                            </h2>
-                            <div class="accordion__item-body" id="productInfo2Body">Lorem ipsum dolor sit amet,
-                                consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-                                aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                                velit esse cillum dolore eu fugiat nulla pariatur.
-                            </div>
-                        </div>
-                        <div class="accordion__item">
-                            <h2>
-                                <button type="button" aria-controls="productInfo3Body" class="accordion__item-title">
-                                    Delivery & Returns
-                                </button>
-                            </h2>
-                            <div class="accordion__item-body" id="productInfo3Body" aria-labelledby="productInfo3">Duis
-                                aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                                pariatur
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
 
             <section class="section" aria-labelledby="labelProductsSimiilar">
@@ -223,110 +228,118 @@
 
             <section class="section products-similar">
                 <h2 class="heading-2 products-similar__heading-2">You may also like</h2>
-                <ul class="products-grid">
+                <ul class="products-grid" aria-label="Other offered products">
                     <li>
-                        <article class="products-grid__item" aria-labelledby="product1Name"
-                                 aria-describedby="product1Meta product1Colors">
-                            <a href="#" tabindex="-1" class="products-grid__item-photo" aria-hidden="true">
+                        <article class="products-grid__item">
+                            <div class="products-grid__item-photo" aria-hidden="true">
                                 <img src="images/photo2.jpg" class="products-grid__item-picture"
                                      srcset="images/photo2_x2.jpg 2x" alt="">
-                            </a>
-                            <div id="product1Name" class="products-grid__item-name"><a href="#">Product name</a></div>
-                            <ul id="product1Colors" class="colors-palette products-grid__item-colors-palette">
-                                <li class="colors-palette__item">
-                                <span class="colors-palette__sample" style="background-color: #C88252;"
-                                      role="img" aria-label="orange">
-                                </span>
-                                </li>
-                                <li class="colors-palette__item">
-                                <span class="colors-palette__sample" style="background-color: #e04acc;"
-                                      role="img" aria-label="pink">
-                                </span>
-                                </li>
-                                <li class="colors-palette__item">
-                                <span class="colors-palette__sample" style="background-color: #292fad;"
-                                      role="img" aria-label="blue">
-                                </span>
-                                </li>
-                                <li class="colors-palette__item">
-                                <span class="colors-palette__sample" style="background-color: #68da00;"
-                                      role="img" aria-label="green">
-                                </span>
-                                </li>
-                            </ul>
-                            <p id="product1Meta" class="products-grid__item-price">
-                                EUR 40
-                            </p>
+                            </div>
+                            <div class="products-grid__item-info">
+                                <h3 id="product1Name" class="products-grid__item-name">
+                                    <a href="#">Product name</a>
+                                </h3>
+                                <ul aria-label="Colors" class="colors-palette products-grid__item-colors-palette">
+                                    <li class="colors-palette__item">
+                                        <span class="colors-palette__sample" style="background-color: #C88252;"
+                                      role="img" aria-label="orange"></span>
+                                    </li>
+                                    <li class="colors-palette__item">
+                                        <span class="colors-palette__sample" style="background-color: #e04acc;"
+                                      role="img" aria-label="pink"></span>
+                                    </li>
+                                    <li class="colors-palette__item">
+                                        <span class="colors-palette__sample" style="background-color: #292fad;"
+                                      role="img" aria-label="blue"></span>
+                                    </li>
+                                    <li class="colors-palette__item">
+                                        <span class="colors-palette__sample" style="background-color: #68da00;"
+                                      role="img" aria-label="green"></span>
+                                    </li>
+                                </ul>
+                                <div class="price-container">
+                                    <span class="visually-hidden">Regular price</span>
+                                    <p id="product1Meta" class="products-grid__item-price">
+                                        EUR 40
+                                    </p>
+                                </div>
+                            </div>
                         </article>
                     </li>
                     <li>
-                        <article class="products-grid__item" aria-labelledby="product2Name"
-                                 aria-describedby="product2Meta product2Colors">
-                            <a href="#" tabindex="-1" class="products-grid__item-photo" aria-hidden="true">
+                        <article class="products-grid__item">
+                            <div class="products-grid__item-photo" aria-hidden="true">
                                 <img src="images/photo3.jpg" class="products-grid__item-picture"
                                      srcset="images/photo3_x2.jpg 2x" alt="">
-                            </a>
-                            <div id="product2Name" class="products-grid__item-name"><a href="#">Very long product name
-                                for testing
-                                purposes</a></div>
-                            <ul id="product2Colors" class="colors-palette products-grid__item-colors-palette">
-                                <li class="colors-palette__item">
-                                <span class="colors-palette__sample" style="background-color: red;"
-                                      role="img" aria-label="red">
-                                </span>
-                                </li>
-                                <li class="colors-palette__item">
-                                <span class="colors-palette__sample" style="background-color: green;"
-                                      role="img" aria-label="green">
-                                </span>
-                                </li>
-                                <li class="colors-palette__item">
-                                <span class="colors-palette__sample" style="background-color: blue;"
-                                      role="img" aria-label="blue">
-                                </span>
-                                </li>
-                            </ul>
-                            <p id="product2Meta" class="products-grid__item-price">
-                                EUR 40
-                            </p>
+                            </div>
+                            <div class="products-grid__item-info">
+                                <h3 id="product2Name" class="products-grid__item-name">
+                                    <a href="#">Very long product
+                                    name
+                                    for testing
+                                    purposes</a>
+                                </h3>
+                                <ul aria-label="Colors" class="colors-palette products-grid__item-colors-palette">
+                                    <li class="colors-palette__item">
+                                        <span class="colors-palette__sample" style="background-color: red;"
+                                      role="img" aria-label="red"></span>
+                                    </li>
+                                    <li class="colors-palette__item">
+                                        <span class="colors-palette__sample" style="background-color: green;"
+                                      role="img" aria-label="green"></span>
+                                    </li>
+                                    <li class="colors-palette__item">
+                                        <span class="colors-palette__sample" style="background-color: blue;"
+                                      role="img" aria-label="blue"></span>
+                                    </li>
+                                </ul>
+                                <div class="price-container">
+                                    <span class="visually-hidden">Regular price</span>
+                                    <p id="product2Meta" class="products-grid__item-price">
+                                        EUR 40
+                                    </p>
+                                </div>
+                            </div>
                         </article>
                     </li>
                     <li>
-                        <article class="products-grid__item" aria-labelledby="product3Name"
-                                 aria-describedby="product3Status product3Meta product3Colors">
-                            <ul id="product3Status" class="product-tags products-grid__item-product-tags">
-                                <li class="product-tags__item">Sold out</li>
-                            </ul>
-                            <a href="#" tabindex="-1" class="products-grid__item-photo" aria-hidden="true">
+                        <article class="products-grid__item">
+                            <div class="products-grid__item-photo" aria-hidden="true">
                                 <img src="images/photo4.jpg" class="products-grid__item-picture"
                                      srcset="images/photo4_x2.jpg 2x" alt="">
-                            </a>
-                            <div id="product3Name" class="products-grid__item-name"><a href="#">Product name</a></div>
-                            <ul id="product3Colors" class="colors-palette products-grid__item-colors-palette">
-                                <li class="colors-palette__item">
-                                <span class="colors-palette__sample" style="background-color: #C88252;"
-                                      role="img" aria-label="orange">
-                                </span>
-                                </li>
-                                <li class="colors-palette__item">
-                                <span class="colors-palette__sample" style="background-color: #e04acc;"
-                                      role="img" aria-label="pink">
-                                </span>
-                                </li>
-                                <li class="colors-palette__item">
-                                <span class="colors-palette__sample" style="background-color: #292fad;"
-                                      role="img" aria-label="blue">
-                                </span>
-                                </li>
-                                <li class="colors-palette__item">
-                                <span class="colors-palette__sample" style="background-color: #68da00;"
-                                      role="img" aria-label="green">
-                                </span>
-                                </li>
-                            </ul>
-                            <p id="product3Meta" class="products-grid__item-price">
-                                EUR 40
-                            </p>
+                            </div>
+                            <div class="products-grid__item-info">
+                                <h3 class="products-grid__item-name">
+                                    <a id="product3Name" href="#" aria-labelledby="product3Name">Product name</a>
+                                </h3>
+                                <ul id="product3Status" aria-label="Status" class="product-tags products-grid__item-product-tags">
+                                    <li class="product-tags__item">Sold out</li>
+                                </ul>
+                                <ul aria-label="Colors" class="colors-palette products-grid__item-colors-palette">
+                                    <li class="colors-palette__item">
+                                        <span class="colors-palette__sample" style="background-color: #C88252;"
+                                      role="img" aria-label="orange"></span>
+                                    </li>
+                                    <li class="colors-palette__item">
+                                        <span class="colors-palette__sample" style="background-color: #e04acc;"
+                                      role="img" aria-label="pink"></span>
+                                    </li>
+                                    <li class="colors-palette__item">
+                                        <span class="colors-palette__sample" style="background-color: #292fad;"
+                                      role="img" aria-label="blue"></span>
+                                    </li>
+                                    <li class="colors-palette__item">
+                                        <span class="colors-palette__sample" style="background-color: #68da00;"
+                                      role="img" aria-label="green"></span>
+                                    </li>
+                                </ul>
+                                <div class="price-container">
+                                    <span class="visually-hidden">Regular price</span>
+                                    <p id="product3Meta" class="products-grid__item-price">
+                                        EUR 40
+                                    </p>
+                                </div>
+                            </div>
                         </article>
                     </li>
 
@@ -347,7 +360,7 @@
                             <li class="social__item">
                                 <a class="social__link" href="#" target="_blank" aria-label="Facebook">
                                     <svg class="social__logo" width="10" height="20" viewBox="0 0 10 20" fill="none"
-                                         xmlns="http://www.w3.org/2000/svg">
+                                         xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                                         <path fill-rule="evenodd" clip-rule="evenodd"
                                               d="M9.02694 9.9817H6.42882V19.5H2.49245V9.9817H0.6203V6.63659H2.49245V4.47193C2.49245 2.92396 3.22776 0.5 6.46386 0.5L9.37967 0.512199V3.7592H7.26406C6.91704 3.7592 6.42908 3.93258 6.42908 4.671V6.63971H9.37084L9.02694 9.9817Z"
                                               fill="#5E626B"/>
@@ -357,7 +370,7 @@
                             <li class="social__item">
                                 <a class="social__link" href="#" target="_blank" aria-label="Instagram">
                                     <svg class="social__logo" width="20" height="20" viewBox="0 0 20 20" fill="none"
-                                         xmlns="http://www.w3.org/2000/svg">
+                                         xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                                         <path d="M14.7071 0.5C17.3502 0.5 19.5 2.65013 19.5 5.29293V14.7071C19.5 17.3502 17.3502 19.5 14.7071 19.5H5.29293C2.65013 19.5 0.5 17.3502 0.5 14.7071V5.29293C0.5 2.65013 2.65013 0.5 5.29293 0.5H14.7071ZM14.7071 2.56779H5.29293C3.7903 2.56779 2.56779 3.7903 2.56779 5.29293V14.7071C2.56779 16.2097 3.7903 17.4326 5.29293 17.4326H14.7071C16.2097 17.4326 17.4326 16.21 17.4326 14.7071V5.29293C17.4326 3.7903 16.21 2.56779 14.7071 2.56779ZM10 5.10678C12.6984 5.10678 14.8936 7.30195 14.8936 10C14.8936 12.698 12.698 14.8936 10 14.8936C7.30195 14.8936 5.10678 12.6984 5.10678 10C5.10678 7.30195 7.30195 5.10678 10 5.10678ZM10 7.17456C8.44247 7.17456 7.17421 8.44212 7.17421 9.99965C7.17421 11.5579 8.44247 12.8258 10 12.8258C11.5582 12.8258 12.8254 11.5579 12.8254 9.99965C12.8254 8.44247 11.5579 7.17456 10 7.17456ZM15.0509 3.80297C15.6892 3.80297 16.2086 4.32238 16.2086 4.96073C16.2086 5.59909 15.6892 6.1185 15.0509 6.1185C14.4122 6.1185 13.8928 5.59909 13.8928 4.96073C13.8928 4.32238 14.4122 3.80297 15.0509 3.80297Z"
                                               fill="#5E626B"/>
                                     </svg>
@@ -415,7 +428,7 @@
                     <form class="form" action="#">
                         <div class="form__input-group">
                             <label style="display:none" for="email">Email</label>
-                            <input class="input" type="email" name="email" id="email" placeholder="Email">
+                            <input class="input" type="email" name="email" id="email" placeholder="Email" autocomplete="email">
                             <button class="btn btn_primary">Subscribe</button>
                         </div>
                         <div class="form__input-group">
